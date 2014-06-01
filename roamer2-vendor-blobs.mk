@@ -31,6 +31,8 @@ PRODUCT_COPY_FILES += \
     vendor/zte/roamer2/proprietary/lib/libOpenVG.so:system/lib/libOpenVG.so \
     vendor/zte/roamer2/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
     vendor/zte/roamer2/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
+    vendor/zte/roamer2/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \
+    vendor/zte/roamer2/proprietary/etc/BCM4330B1_002.001.032.0518.0520.hcd:system/etc/BCM4330B1_002.001.032.0518.0520.hcd \
     vendor/zte/roamer2/proprietary/lib/libchromatix_mt9e013_preview.so:system/lib/libchromatix_mt9e013_preview.so \
     vendor/zte/roamer2/proprietary/lib/libchromatix_mt9p012_preview.so:system/lib/libchromatix_mt9p012_preview.so \
     vendor/zte/roamer2/proprietary/lib/libchromatix_mt9t013_preview.so:system/lib/libchromatix_mt9t013_preview.so \
@@ -43,12 +45,15 @@ PRODUCT_COPY_FILES += \
     vendor/zte/roamer2/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
     vendor/zte/roamer2/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
     vendor/zte/roamer2/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
-    vendor/zte/roamer2/proprietary/lib/hw/camera.msm7x27a.so:system/lib/hw/camera.msm7x27a.so \
+    vendor/zte/roamer2/proprietary/lib/hw/camera.msm7627a.so:system/lib/hw/camera.msm7627a.so \
     vendor/zte/roamer2/proprietary/bin/fmconfig:system/bin/fmconfig \
     vendor/zte/roamer2/proprietary/bin/fm_qsoc_patches:system/bin/fm_qsoc_patches \
     vendor/zte/roamer2/proprietary/lib/libDivxDrm.so:system/lib/libDivxDrm.so \
     vendor/zte/roamer2/proprietary/lib/libdivxdrmdecrypt.so:system/lib/libdivxdrmdecrypt.so \
+    vendor/zte/roamer2/proprietary/lib/libExtendedExtractor.so:system/lib/libExtendedExtractor.so \
     vendor/zte/roamer2/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+    vendor/zte/roamer2/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
+    vendor/zte/roamer2/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
     vendor/zte/roamer2/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
     vendor/zte/roamer2/proprietary/lib/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
     vendor/zte/roamer2/proprietary/lib/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
@@ -72,22 +77,25 @@ PRODUCT_COPY_FILES += \
     vendor/zte/roamer2/proprietary/lib/libOmxVp8Dec.so:system/lib/libOmxVp8Dec.so \
     vendor/zte/roamer2/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
     vendor/zte/roamer2/proprietary/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
-    vendor/zte/roamer2/proprietary/lib/libmm-abl-oem.so:system/lib/libmm-abl-oem.so \
-    vendor/zte/roamer2/proprietary/lib/libmm-abl.so:system/lib/libmm-abl.so \
-    vendor/zte/roamer2/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
-    vendor/zte/roamer2/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
-    vendor/zte/roamer2/proprietary/lib/libqc-opt.so:system/lib/libqc-opt.so \
+    vendor/zte/roamer2/proprietary/bin/ATFWD-daemon:system/bin/ATFWD-daemon \
+    vendor/zte/roamer2/proprietary/bin/bridgemgrd:system/bin/bridgemgrd \
+    vendor/zte/roamer2/proprietary/bin/port-bridge:system/bin/port-bridge \
+    vendor/zte/roamer2/proprietary/bin/qmiproxy:system/bin/qmiproxy \
+    vendor/zte/roamer2/proprietary/bin/sapd:system/bin/sapd \
     vendor/zte/roamer2/proprietary/bin/netmgrd:system/bin/netmgrd \
     vendor/zte/roamer2/proprietary/bin/qmuxd:system/bin/qmuxd \
-    vendor/zte/roamer2/proprietary/bin/rild:system/bin/rild \
+    vendor/zte/roamer2/proprietary/bin/radish:system/bin/radish \
+    vendor/zte/roamer2/proprietary/etc/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
+    vendor/zte/roamer2/proprietary/etc/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
+    vendor/zte/roamer2/proprietary/framework/qcnvitems.jar:system/framework/qcnvitems.jar \
+    vendor/zte/roamer2/proprietary/framework/qcrilhook.jar:system/framework/qcrilhook.jar \
     vendor/zte/roamer2/proprietary/bin/rmt_storage:system/bin/rmt_storage \
-    vendor/zte/roamer2/proprietary/lib/libaudioeq.so:system/lib/libaudioeq.so \
     vendor/zte/roamer2/proprietary/lib/libauth.so:system/lib/libauth.so \
+    vendor/zte/roamer2/proprietary/lib/libaudioeq.so:system/lib/libaudioeq.so \
     vendor/zte/roamer2/proprietary/lib/libcm.so:system/lib/libcm.so \
     vendor/zte/roamer2/proprietary/lib/libdiag.so:system/lib/libdiag.so \
     vendor/zte/roamer2/proprietary/lib/libdsi_netctrl.so:system/lib/libdsi_netctrl.so \
     vendor/zte/roamer2/proprietary/lib/libdsm.so:system/lib/libdsm.so \
-    vendor/zte/roamer2/proprietary/lib/libdsprofile.so:system/lib/libdsprofile.so \
     vendor/zte/roamer2/proprietary/lib/libdss.so:system/lib/libdss.so \
     vendor/zte/roamer2/proprietary/lib/libdsutils.so:system/lib/libdsutils.so \
     vendor/zte/roamer2/proprietary/lib/libgsdi_exp.so:system/lib/libgsdi_exp.so \
@@ -96,9 +104,9 @@ PRODUCT_COPY_FILES += \
     vendor/zte/roamer2/proprietary/lib/libmmgsdilib.so:system/lib/libmmgsdilib.so \
     vendor/zte/roamer2/proprietary/lib/libnv.so:system/lib/libnv.so \
     vendor/zte/roamer2/proprietary/lib/libnetmgr.so:system/lib/libnetmgr.so \
-    vendor/zte/roamer2/proprietary/lib/liboem_rapi.so:system/lib/liboem_rapi.so \
     vendor/zte/roamer2/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
     vendor/zte/roamer2/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \
+    vendor/zte/roamer2/proprietary/lib/libqc-opt.so:system/lib/libqc-opt.so \
     vendor/zte/roamer2/proprietary/lib/libqdi.so:system/lib/libqdi.so \
     vendor/zte/roamer2/proprietary/lib/libqdp.so:system/lib/libqdp.so \
     vendor/zte/roamer2/proprietary/lib/libqmiservices.so:system/lib/libqmiservices.so \

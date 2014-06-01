@@ -1,0 +1,64 @@
+#!/system/bin/sh
+
+IFNAME=`getprop wifi.fcctest.if wlan0`
+TXMODE=`getprop wifi.fcctest.mode tx99`
+FREQ=`getprop wifi.fcctest.freq 1`
+RATE=`getprop wifi.fcctest.rate 11`
+ANTENNA=`getprop wifi.fcctest.ant 0`
+ACT=`getprop wifi.fcctest.act done_a`
+PARA=`cat /data/fcctest_para help`
+TAGS="tcmd_shell"
+SYSLOG="log -p i -t $TAGS "
+TEST=`cat /data/abcd a`
+
+$SYSLOG "$0 $1 $#"
+
+if [ $# != 0 ]; then
+    case $1 in
+        rmmod)		
+	    $SYSLOG  "with arg rmmod"
+		/system/bin/ifconfig wlan0 down
+		/system/bin/rmmod ath6kl_sdio
+		sleep 1
+		/system/bin/rmmod cfg80211
+		sleep 1
+		/system/bin/insmod /system/wifi/cfg80211.ko
+		sleep 1
+		/system/bin/insmod /system/wifi/ath6kl_sdio.ko
+	    	setprop wifi.tcmd.enabled false
+		exit
+		;;
+	up)
+	    $SYSLOG  "ifconfig wlan0 up"
+	    /system/bin/ifconfig wlan0 up
+	    setprop wifi.tcmd.enabled true
+	    sleep 2
+	    exit
+	    ;;
+	esac
+fi
+
+$SYSLOG "Normal OPERATION"
+
+case $ACT in 
+    tx_s)
+	$SYSLOG "/system/bin/athtestcmd --tx $TXMODE --txfreq $FREQ --txrate $RATE --txantenna $ANTENNA -i $IFNAME"
+    /system/bin/athtestcmd --tx $TXMODE --txfreq $FREQ --txrate $RATE --txantenna $ANTENNA -i $IFNAME
+    ;;
+    tx_t)
+    /system/bin/athtestcmd --tx off -i $IFNAME
+    ;;
+    rx_s)
+    /system/bin/athtestcmd --rx promis -i $IFNAME
+    ;;
+    rx_t)
+    /system/bin/athtestcmd --rx report -i $IFNAME > /data/fcctest_rsts
+    ;;
+    done_a)
+	$SYSLOG "/system/bin/athtestcmd $PARA"
+    /system/bin/athtestcmd $PARA > /data/fcctest_rst
+    ;;
+	test)
+	$SYSLOG "/system/bin/athtestcmd $TEST"
+	;;
+esac
